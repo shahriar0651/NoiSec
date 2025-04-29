@@ -1,0 +1,115 @@
+# Dataset params
+name : 'gtsrb'
+num_classes : 43
+num_channels : 3
+width : 32
+height : 32
+
+# Classifier params
+batch_size : 32 
+num_feats : 256 
+epochs : 50
+loss_fn : cross 
+optim : adam
+lr : 0.001
+
+
+# Autoencoder params
+lr_ae : 0.001
+ae_epochs : 100 
+ae_hidden_layers : 5
+ae_latent_dim : 1024
+noise_factor : 0.10 #0.05?
+sparse_factor : 0.1
+unet_nect_channel: 16
+
+# Backdoor params
+trigger_label : 0
+poison_ratio : 0.1
+max_fpr : 0.01
+
+#artifacts
+bandwidth : 0.26 #1.2
+
+
+classes : [
+    "Speed limit (20km/h)",
+    "Speed limit (30km/h)",
+    "Speed limit (50km/h)",
+    "Speed limit (60km/h)",
+    "Speed limit (70km/h)",
+    "Speed limit (80km/h)",
+    "End of speed limit (80km/h)",
+    "Speed limit (100km/h)",
+    "Speed limit (120km/h)",
+    "No passing",
+    "No passing for vehicles over 3.5 metric tons",
+    "Right-of-way at the next intersection",
+    "Priority road",
+    "Yield",
+    "Stop",
+    "No vehicles",
+    "Vehicles over 3.5 metric tons prohibited",
+    "No entry",
+    "General caution",
+    "Dangerous curve to the left",
+    "Dangerous curve to the right",
+    "Double curve",
+    "Bumpy road",
+    "Slippery road",
+    "Road narrows on the right",
+    "Road work",
+    "Traffic signals",
+    "Pedestrians",
+    "Children crossing",
+    "Bicycles crossing",
+    "Beware of ice/snow",
+    "Wild animals crossing",
+    "End of all speed and passing limits",
+    "Turn right ahead",
+    "Turn left ahead",
+    "Ahead only",
+    "Go straight or right",
+    "Go straight or left",
+    "Keep right",
+    "Keep left",
+    "Roundabout mandatory",
+    "End of no passing",
+    "End of no passing by vehicles over 3.5 metric tons"
+]
+
+target_classes: 
+- 14
+
+atk_cfg:
+  RN:
+    eps: 0.20
+  FGSM:
+    eps: 0.20 #0.10
+  BIM:
+    eps: 0.10
+    alpha: 0.01
+    steps: 25
+  PGD:
+    eps: 0.10
+    alpha: 0.01
+    steps: 25
+  JSMA:
+    theta: 0.10 
+    gamma: 0.50 
+  UAP:
+    eps: 0.10
+    delta: 0.50
+    max_iter: 250
+    attacker: fgsm
+  C&W:
+    c: 1.0
+    confidence: 19.0
+    max_iter: 10
+    binary_search_step: 50
+    learning_rate: 0.025
+  BadNet:
+    trigger_label: 2
+    poison_ratio: 0.1
+  Square:
+    eps: 0.20

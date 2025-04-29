@@ -1,0 +1,70 @@
+# Dataset params
+name : chestmnist
+num_classes : 2 #14
+num_feats : 128 #256 #256 #64
+num_channels : 1
+width : 64
+height : 64
+
+# Classifier params
+batch_size : 32
+epochs : 100
+loss_fn : cross 
+optim : adam
+lr : 0.001
+
+# Autoencoder params
+lr_ae : 0.001
+ae_epochs : 100
+ae_hidden_layers : 3
+ae_latent_dim : 1024 #256 #512 #Updated
+noise_factor : 0.10 #0.20
+sparse_factor : 0.1
+unet_nect_channel: 8
+
+# Backdoor params
+trigger_label : 0
+poison_ratio : 0.2 #0.10
+max_fpr : 0.01
+
+#artifacts
+bandwidth : 1.2 #1.2
+
+classes :
+- 'benign'
+- 'pneumonia'
+
+atk_cfg:
+  RN:
+    eps: 0.05
+  FGSM:
+    eps: 0.05
+  BIM:
+    eps: 0.05
+    alpha: 0.01
+    steps: 100
+  PGD:
+    eps: 0.05
+    alpha: 0.01
+    steps: 100
+  JSMA:
+    theta: 0.50
+    gamma: 0.20
+  UAP:
+    eps: 0.10
+    delta: 0.50
+    max_iter: 250
+    attacker: fgsm
+  C&W:
+    c: 1.0
+    confidence: 19.0
+    max_iter: 10
+    binary_search_step: 50
+    learning_rate: 0.025
+  BadNet:
+    trigger_label: 0
+    poison_ratio: 0.1
+  Square:
+    eps: 0.05 
+    p_init : 1.0
+    n_queries: 1000

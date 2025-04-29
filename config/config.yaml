@@ -1,0 +1,106 @@
+workspace_dir : ".."
+dataset_dir: "../datasets/classification/"
+models_dir: "../artifacts/models/"
+results_dir: "../artifacts/results/"
+scaler_dir: "../artifacts/scaler"
+# results_dir: "../results/"
+
+device : "cuda"
+n : 100 #1000
+scale_rn: 5
+n_comp_step: 1
+p_step : 100
+basetype : 'both' 
+# train/test/both 
+# define taks with baseline detectors
+evalenv : 'BenPerturb' # 'NatNoise' or 'BenPerturb'
+evaltype : 0
+# 0  = all attack
+# 1  = successful attack
+# 2  = unsuccessful attack
+
+magsec: False
+
+retrain : False
+reeval : False
+verbose : True
+defaults:
+  - dataset: fashion
+  - models: baseline
+
+modelTypes:
+  # - badnet
+  - target
+  - surrogate
+    
+environments:
+  - 'clean'
+  # - 'noisy'
+  
+adv_attacks:
+  - 'RN'
+  - 'FGSM'
+  - 'BIM'
+  - 'PGD'
+  - 'UAP' 
+  - 'Square' 
+
+adaptive: False
+adaptive_attack: 'BIM'
+adaptive_eps: 0.10
+
+
+backdoor_attacks:
+  - BadNet
+  - WaNet
+  - LCA #LabelConsistent
+
+rep : 'Feat'
+scale : False
+blackbox : False
+
+markers : {
+    "GN": 'o',       # Circle
+    "FGSM": "^",     # Triangle pointing upwards
+    "BIM": "s",      # Square
+    "PGD": "p",      # Pentagon
+    "CW": "D",       # Diamond
+    "C&W": "*",      # Asterisk
+    "BadNet": "X",   # Cross (X)
+    "JSMA": "v",     # Triangle pointing downwards
+    "UAP": ">",      # Triangle pointing right
+    "Pixle": "h",   # Hexagon
+    "DeepFool": "8",   # Octagon
+    "OnePixel": "P",   # Plus sign
+    "Square": "H",   # Hourglass
+    "Dummy5": "x",   # Cross (x)
+    "Dummy6": "|",   # Vertical line
+    "Dummy7": "_",   # Horizontal line
+}
+
+attackType: 
+  0: All
+  1: Successful
+  2: Unsuccessful  
+  3: Targeted
+
+saveFig : True
+see_max : False
+
+split_test_data : True
+use_aux_data : False
+aux_samples : 2000
+cls_type : 'cnn'
+scheduler: False
+
+autoencoder_type : 'CAE' #Unet
+DataParallel : True
+
+target_class : 0
+fig_dpi : 350
+
+get_patch : False
+weak_fraction: 5
+sync : weak # strong
+
+target_classes_only: False

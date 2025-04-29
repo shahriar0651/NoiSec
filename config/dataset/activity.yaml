@@ -1,0 +1,73 @@
+# Dataset params
+name : activity
+num_classes : 7
+num_channels : 1
+width : 500
+height : 90
+
+
+# Classifier params
+batch_size : 64
+num_feats : 512 
+epochs : 1000
+loss_fn : cross 
+optim : adam
+lr : 0.0005
+
+# Autoencoder params
+lr_ae : 0.0005
+ae_epochs : 250 #250?
+ae_hidden_layers : 4
+ae_latent_dim : 1024
+noise_factor : 0.05 
+sparse_factor : 0.1
+unet_nect_channel: 8
+
+
+max_fpr : 0.01
+
+
+#artifacts
+bandwidth : 0.26 
+
+classes:
+- Arc
+- Elbow
+- Rectangle
+- Silence
+- SLFW
+- SLRL
+- SLUD
+
+atk_cfg:
+  RN:
+    eps: 0.05
+  FGSM:
+    eps: 0.05
+  BIM:
+    eps: 0.05
+    alpha: 0.005
+    steps: 25
+  PGD:
+    eps: 0.05
+    alpha: 0.005
+    steps: 25
+  JSMA:
+    theta: 0.25
+    gamma: 0.20
+  UAP:
+    eps: 0.05
+    delta: 0.50
+    max_iter: 250
+    attacker: fgsm
+  C&W:
+    c: 1.0
+    confidence: 19.0
+    max_iter: 10
+    binary_search_step: 50
+    learning_rate: 0.025
+  BadNet:
+    trigger_label: 2
+    poison_ratio: 0.1
+  Square:
+    eps: 0.05 

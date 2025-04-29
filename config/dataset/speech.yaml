@@ -1,0 +1,67 @@
+# Dataset params
+name : speech
+num_classes : 35
+num_feats : 1024 
+num_channels : 1
+width : 64
+height : 81
+
+# Classifier params
+batch_size : 64
+epochs : 200
+loss_fn : cross 
+optim : adam
+lr : 0.001
+
+# Autoencoder params
+lr_ae : 0.001
+ae_epochs : 100
+ae_hidden_layers : 3
+ae_latent_dim : 256 
+noise_factor : 0.10 
+sparse_factor : 0.1
+unet_nect_channel: 8
+
+# Backdoor params
+trigger_label : 0
+poison_ratio : 0.2 #0.10
+
+max_fpr : 0.01
+
+#artifacts
+bandwidth : 1.2 
+
+classes : ['backward', 'bed', 'bird', 'cat', 'dog', 'down', 'eight', 'five', 'follow', 'forward', 'four', 'go', 'happy', 'house', 'learn', 'left', 'marvin', 'nine', 'no', 'off', 'on', 'one', 'right', 'seven', 'sheila', 'six', 'stop', 'three', 'tree', 'two', 'up', 'visual', 'wow', 'yes', 'zero']
+
+atk_cfg:
+  RN:
+    eps: 0.10
+  FGSM:
+    eps: 0.10
+  BIM:
+    eps: 0.10
+    alpha: 0.01
+    steps: 25
+  PGD:
+    eps: 0.20
+    alpha: 0.01
+    steps: 25
+  JSMA:
+    theta: 0.50
+    gamma: 0.20
+  UAP:
+    eps: 0.30 
+    delta: 0.50
+    max_iter: 250
+    attacker: fgsm
+  C&W:
+    c: 1.0
+    confidence: 19.0
+    max_iter: 10
+    binary_search_step: 50
+    learning_rate: 0.025
+  BadNet:
+    trigger_label: 2
+    poison_ratio: 0.1
+  Square:
+    eps: 0.10 

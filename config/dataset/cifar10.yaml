@@ -1,0 +1,82 @@
+# Dataset params
+name : cifar10
+num_classes : 10
+num_channels : 3
+width : 32
+height : 32
+
+
+# Classifier params
+batch_size : 64
+num_feats : 256 
+epochs : 100
+loss_fn : cross 
+optim : adam
+lr : 0.001
+
+# Autoencoder params
+lr_ae : 0.001
+ae_epochs : 100
+ae_hidden_layers : 4
+ae_latent_dim : 1024
+noise_factor : 0.10 
+sparse_factor : 0.1
+unet_nect_channel: 8
+
+# Backdoor params
+trigger_label : 2
+poison_ratio : 0.1
+
+max_fpr : 0.01
+
+
+#artifacts
+bandwidth : 0.26
+
+classes:
+- plane
+- car
+- bird
+- cat
+- deer
+- dog
+- frog
+- horse
+- ship
+- truck
+
+
+atk_cfg:
+  RN:
+    eps: 0.01
+  FGSM:
+    eps: 0.01
+  BIM:
+    eps: 0.010
+    alpha: 0.01
+    steps: 25
+  PGD:
+    eps: 0.010
+    alpha: 0.01
+    steps: 25
+  UAP:
+    eps: 0.01 
+    delta: 0.50
+    max_iter: 250
+    attacker: fgsm
+  JSMA:
+    theta: 0.05
+    gamma: 0.05
+  C&W:
+    c: 1.0
+    confidence: 20.0
+    max_iter: 10
+    binary_search_step: 50
+    learning_rate: 0.025
+  BadNet:
+    trigger_label: 2
+    poison_ratio: 0.1
+  Square:
+    eps: 0.10
+    p_init : 0.25
+    n_queries: 2500
