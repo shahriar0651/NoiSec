@@ -1,5 +1,5 @@
 
-# [NoiSec] Let the Noise Speak — A Unified Defense Against Adversarial and Backdoor Attacks
+# [NoiSec-ESORICS'25] Let the Noise Speak — A Unified Defense Against Adversarial and Backdoor Attacks
 
 [![Paper](https://img.shields.io/badge/Paper-ArXiv%20Preprint-brightgreen)](https://arxiv.org/abs/2406.13073)  
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)  
