@@ -1,0 +1,8 @@
+artifacts/*
+datasets*/*
+src/outputs/*
+src/multirun/*
+*/__pycache__/*
+*/*/__pycache__/*
+*/*/*/__pycache__/*
+*/*/*/*/__pycache__/*

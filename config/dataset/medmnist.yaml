@@ -1,5 +1,5 @@
 # Dataset params
-name : chestmnist
+name : medmnist
 num_classes : 2 #14
 num_feats : 128 #256 #256 #64
 num_channels : 1

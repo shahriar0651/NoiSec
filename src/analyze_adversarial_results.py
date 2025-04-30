@@ -19,7 +19,7 @@ import time
 from sklearn.metrics import accuracy_score
 import matplotlib.cm as cm
 import matplotlib.patches as patches
-
+import glob
 
 from datasets import *
 from models import *
@@ -47,7 +47,7 @@ def anayze_results(cfg: DictConfig) -> None:
                      'gtsrb' : 'GTSRB',
                      'speech' : 'SPEECHCOMMAND',
                      'activity' : 'Activity',
-                     'chestmnist' : 'ChestMNIST',
+                     'medmnist' : 'MedMNIST',
                      }
     detector_name_dict ={
         'Artifacts' : 'Artifact',

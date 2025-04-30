@@ -105,7 +105,7 @@ def get_conv_net(cfg, model_type = 'target', pre_trained = False):
             net = net_dict[model_type]
 
     
-        if cfg.dataset.name in['chestmnist']:
+        if cfg.dataset.name in['medmnist']:
             net_dict = {
                 "target" : Classifier1x64x64_target(num_channels, num_feats, num_classes),
                 "surrogate" : Classifier1x64x64_surrogate(num_channels, num_feats, num_classes), 

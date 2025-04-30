@@ -126,7 +126,7 @@ NoiSec/
 ## Training Models (Classifier + Autoencoder)
 Supporting datasets: 
 - The `dataset` argument specifies one or more datasets on which to generate adversarial examples.  
-  Supported datasets: `fashion`, `cifar10`, `gtsrb`, `chestmnist`, `speech`, `activity`.
+  Supported datasets: `fashion`, `cifar10`, `gtsrb`, `medmnist`, `speech`, `activity`.
 - For any of the following python script `dataset=<name_of_dataset>` (for instance, `dataset=fashion`) to specify on which dataset you would run the script. Additionally, you can use the hydra's `multirun` feature to run the same script for a list of dataset such as `-m dataset=fashion,cifar10,gtsrb,...>`.
 
 
@@ -134,13 +134,13 @@ Supporting datasets:
 To train the target and surrogate classifiers, run:
 
 ```bash
-python train_classifiers.py # For single dataset add [dataset=dataset_name], such as [dataset=fashion] or for multiple datasets add list of datasets, such as [-m dataset=fashion,cifar10,gtsrb,chestmnist,speech,activity]
+python train_classifiers.py # For single dataset add [dataset=dataset_name], such as [dataset=fashion] or for multiple datasets add list of datasets, such as [-m dataset=fashion,cifar10,gtsrb,medmnist,speech,activity]
 ```
 ### 2. Train the Autoencoder Model
 To train the denoising autoencoder, run:
 
 ```bash
-python train_autoencoders.py # For single dataset add [dataset=dataset_name], such as [dataset=fashion] or for multiple datasets add list of datasets, such as [-m dataset=fashion,cifar10,gtsrb,chestmnist,speech,activity]
+python train_autoencoders.py # For single dataset add [dataset=dataset_name], such as [dataset=fashion] or for multiple datasets add list of datasets, such as [-m dataset=fashion,cifar10,gtsrb,medmnist,speech,activity]
 ```
 
 ## Testing against Adversarial Attacks
@@ -153,7 +153,7 @@ The following scripts have additional arguments, particularly:
 To generate adversarial examples for both white-box and black-box settings, run:
 
 ```bash
-python generate_adversarial_examples.py # -m blackbox=False,True dataset=fashion,cifar10,gtsrb,chestmnist,speech,activity
+python generate_adversarial_examples.py # -m blackbox=False,True dataset=fashion,cifar10,gtsrb,medmnist,speech,activity
 ```
 
 ### 4. Detect Adversarial Examples
@@ -161,7 +161,7 @@ python generate_adversarial_examples.py # -m blackbox=False,True dataset=fashion
 To detect adversarial examples for both white-box and black-box settings, run:
 
 ```bash
-python detect_adversarial_examples.py # -m blackbox=False,True dataset=fashion,cifar10,gtsrb,chestmnist,speech,activity
+python detect_adversarial_examples.py # -m blackbox=False,True dataset=fashion,cifar10,gtsrb,medmnist,speech,activity
 ```
 In this case, the `blackbox` option specifies which adversarial examples to consider during evaluation. 
 
@@ -170,13 +170,13 @@ In this case, the `blackbox` option specifies which adversarial examples to cons
 To analyze the results and create visualizations on the results, run:
 
 ```bash
-python analyze_adversarial_results.py # -m blackbox=False,True dataset=fashion,cifar10,gtsrb,chestmnist,speech,activity
+python analyze_adversarial_results.py # -m blackbox=False,True dataset=fashion,cifar10,gtsrb,medmnist,speech,activity
 ```
 
 ### Optional: Running the Adversarial Attack Detection Pipeline
 To run step 1 to step 5 within a single command, run:
 ```bash
-python run_adversarial_pipeline.py # -m blackbox=False,True dataset=fashion,cifar10,gtsrb,chestmnist,speech,activity
+python run_adversarial_pipeline.py # -m blackbox=False,True dataset=fashion,cifar10,gtsrb,medmnist,speech,activity
 ```
 
 ---

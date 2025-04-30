@@ -41,7 +41,7 @@ def get_autoencoder(cfg, pre_trained = False):
         encoder, decoder = get_autoencoder_radioml(cfg) 
     if cfg.dataset.name in ['robofi']:
         encoder, decoder = get_autoencoder_robofi(cfg) 
-    if cfg.dataset.name in ['chestmnist']:
+    if cfg.dataset.name in ['medmnist']:
         encoder, decoder = get_autoencoder_1x64x64(cfg) 
     if cfg.dataset.name in ['activity']:
         encoder, decoder = get_autoencoder_1x500x90(cfg) 

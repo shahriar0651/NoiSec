@@ -5,7 +5,7 @@ from medmnist import INFO
 import torchvision.transforms as transforms
 from collections import Counter
 
-def get_chestmnist_dataset(cfg):
+def get_medmnist_dataset(cfg):
     data_flag = 'pneumoniamnist' #cfg.dataset.name
     info = INFO[data_flag]
     DataClass = getattr(medmnist, info['python_class'])

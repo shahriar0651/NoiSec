@@ -105,7 +105,7 @@ def update_abs_path(cfg, source_dir):
     cfg.results_dir = source_dir / cfg.results_dir / cfg.dataset.name / params_str
 
 
-    # cfg.dataset_dir.mkdir(parents=True, exist_ok=True)
+    cfg.dataset_dir.mkdir(parents=True, exist_ok=True)
     cfg.models_dir.mkdir(parents=True, exist_ok=True)
     cfg.results_dir.mkdir(parents=True, exist_ok=True)
     if cfg.DataParallel and cfg.device == 'cuda' and torch.cuda.device_count() > 1:

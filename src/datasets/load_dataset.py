@@ -25,7 +25,7 @@ from .get_datasets.get_cifar100 import get_cifar100_dataset
 from .get_datasets.get_radioml import get_radioml_dataset
 from .get_datasets.get_robofi import get_robofi_dataset
 from .get_datasets.get_activity import get_activity_dataset
-from .get_datasets.get_chestmnist import get_chestmnist_dataset
+from .get_datasets.get_medmnist import get_medmnist_dataset
 from helper import *
 
 # functions to show an image
@@ -54,8 +54,8 @@ def data_loader(cfg, model_type):
         trainset, testset =  get_robofi_dataset(cfg) 
     elif cfg.dataset.name == 'activity':
         trainset, testset =  get_activity_dataset(cfg) 
-    elif cfg.dataset.name == 'chestmnist':
-        trainset, testset =  get_chestmnist_dataset(cfg) 
+    elif cfg.dataset.name == 'medmnist':
+        trainset, testset =  get_medmnist_dataset(cfg) 
     else:
         print("Dataset not implemented yet!")
 
