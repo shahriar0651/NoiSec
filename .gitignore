@@ -1,4 +1,4 @@
-artifacts/*
+*artifacts/*
 datasets*/*
 src/outputs/*
 src/multirun/*
