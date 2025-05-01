@@ -112,4 +112,6 @@ atk_cfg:
     trigger_label: 2
     poison_ratio: 0.1
   Square:
-    eps: 0.20
+    eps: 0.20 
+    p_init : 0.50
+    n_queries: 250

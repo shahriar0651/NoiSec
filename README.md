@@ -176,7 +176,7 @@ python analyze_adversarial_results.py # -m blackbox=False,True dataset=fashion,c
 ### Optional: Running the Adversarial Attack Detection Pipeline
 To run step 1 to step 5 within a single command, run:
 ```bash
-python run_adversarial_pipeline.py # -m blackbox=False,True dataset=fashion,cifar10,gtsrb,medmnist,speech,activity
+python run_adversarial_pipeline.py -m blackbox=False,True dataset=fashion,cifar10,gtsrb,medmnist,speech,activity
 ```
 
 ---

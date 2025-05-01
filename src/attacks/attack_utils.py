@@ -168,7 +168,7 @@ def generate_attack(cfg, idx, attack_type, model, images, labels): #0.20 theta=1
     if attack_type == 'OnePixel':
         attack = OnePixel(model, pixels=1, steps=steps, popsize=10, inf_batch=128)
     if attack_type == 'Square':
-        attack = Square(model, norm="Linf", eps=eps, n_queries=n_queries, n_restarts=1, p_init=p_init, loss="margin", resc_schedule=True,)
+        attack = torchattacks.Square(model, norm="Linf", eps=eps, n_queries=n_queries, n_restarts=1, p_init=p_init, loss="margin", resc_schedule=True,)
     if attack_type == 'JSMA':         
         attack = JSMA(model, theta=theta, gamma=gamma)   
     

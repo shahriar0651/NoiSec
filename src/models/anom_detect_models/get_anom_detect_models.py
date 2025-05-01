@@ -17,19 +17,19 @@ from sklearn.semi_supervised import LabelSpreading
 
 def get_baseline_model(cfg, model_name, n_components):
 
-    num_jobs  = cfg.models.num_jobs
-    num_jobs  = cfg.models.num_jobs
-    random_state  = cfg.models.random_state
-    contamination  = cfg.models.contamination
-    use_ae  = cfg.models.use_ae
-    epochs  = cfg.models.epochs
-    n_neighbors = cfg.models.n_neighbors
+    # num_jobs  = cfg.models.num_jobs
+    # num_jobs  = cfg.models.num_jobs
+    # random_state  = cfg.models.random_state
+    # contamination  = cfg.models.contamination
+    # epochs  = cfg.models.epochs
+    # n_neighbors = cfg.models.n_neighbors
 
-    if cfg.rep == 'Feat':
-        hidden_neurons = cfg.models.hidden_neurons_feat
-    elif cfg.rep == 'Conf':
-        hidden_neurons = cfg.models.hidden_neurons_conf
+    # if cfg.rep == 'Feat':
+    #     hidden_neurons = cfg.models.hidden_neurons_feat
+    # elif cfg.rep == 'Conf':
+    #     hidden_neurons = cfg.models.hidden_neurons_conf
     
+    contamination  = cfg.models.contamination
     if model_name == 'Manda':
         return LabelSpreading(gamma=6)
 

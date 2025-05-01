@@ -71,18 +71,6 @@ atk_cfg:
     trigger_label: 2
     poison_ratio: 0.1
   Square:
-    eps: 0.20 #0.30
+    eps: 0.20 
     p_init : 0.50
     n_queries: 250
-
-  Pixle:
-    x_dimensions: 5
-    y_dimensions: 5
-    max_iterations: 50
-  OnePixel:
-    pixels: 1
-    steps: 10
-    popsize: 10
-  DeepFool:
-    steps: 50
-    overshoot: 0.02

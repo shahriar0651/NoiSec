@@ -65,7 +65,6 @@ def adv_attack(cfg, attack_type, net_dict, encoder, decoder, test_loader, env):
     iter_count = 0
     org_target_list = []
     magnet_score_list = []
-    nadl_score_list = []
     combined_conf_pre_feat = []
 
     optimistic = True

@@ -65,3 +65,5 @@ atk_cfg:
     poison_ratio: 0.1
   Square:
     eps: 0.10 
+    p_init : 0.25
+    n_queries: 2500

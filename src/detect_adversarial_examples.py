@@ -61,7 +61,7 @@ def detect_adv_examples(cfg: DictConfig) -> None:
     adv_img_conf = col_dict['Adversarial_Org_Image']["Conf"]
     ben_img_conf = col_dict['Benign_Org_Image']["Conf"]
 
-    for n_components in list(map(int, np.linspace(1, cfg.dataset.num_classes, cfg.n_comp_step))):
+    for n_components in list(map(int, np.linspace(1, cfg.dataset.num_classes, cfg.n_comp_step))): #FIXME: Remove the loop
         print("n_components: ", n_components)
         # Run model training for baseline models
         for env in cfg.environments:
@@ -140,12 +140,10 @@ def detect_adv_examples(cfg: DictConfig) -> None:
                         if cfg.evalenv == 'NatNoise': # Evaluate against "No Noise"
                             X_test_ben = att_analysis_ben_conf[nat_noi_feats].values
                             y_magnet_ben = att_analysis_ben_conf[['MagNet_Nat_L1', 'MagNet_Nat_JSD']].values
-                            y_nadl_ben = att_analysis_ben_conf['NADL_Nat_Dist'].values
 
                         elif cfg.evalenv == 'BenPerturb': # Evaluate against "Benign Noise"
                             X_test_ben = att_analysis_ben_conf[ben_noi_feats].values
                             y_magnet_ben = att_analysis_ben_conf[['MagNet_Ben_L1', 'MagNet_Ben_JSD']].values
-                            y_nadl_ben = att_analysis_ben_conf[['NADL_Ben_Dist']].values
                         
                         max_adv_prb = att_analysis_ben_conf[adv_img_conf].max(axis=1)                    
                         min_of_max_adv_prb = np.min(max_adv_prb)
@@ -185,9 +183,7 @@ def detect_adv_examples(cfg: DictConfig) -> None:
                             X_test = np.concatenate((X_test_ben, X_test_adv), axis=0)
 
                             y_magnet_adv = att_analysis_adv_conf[['MagNet_Adv_L1', 'MagNet_Adv_JSD']].values
-                            y_nadl_adv = att_analysis_adv_conf[['NADL_Adv_Dist']].values
                             y_magnet = np.concatenate((y_magnet_ben, y_magnet_adv), axis=0)
-                            y_nadl = np.concatenate((y_nadl_ben, y_nadl_adv), axis=0)
                             y_test_ben = np.zeros(X_test_ben.shape[0])
                             y_test_adv = np.ones(X_test_adv.shape[0])
                             y_test = np.concatenate((y_test_ben, y_test_adv), axis=0)
