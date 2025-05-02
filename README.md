@@ -1,15 +1,18 @@
 
-# [NoiSec-ESORICS'25] Let the Noise Speak — A Unified Defense Against Adversarial and Backdoor Attacks
+# [NoiSec] Let the Noise Speak — A Unified Defense Against Adversarial and Backdoor Attacks
 
-[![Paper](https://img.shields.io/badge/Paper-ArXiv%20Preprint-brightgreen)](https://arxiv.org/abs/2406.13073)  
+        
+---
+> **Paper**: [Let the Noise Speak: Harnessing Noise for a Unified Defense Against Adversarial and Backdoor Attacks](https://arxiv.org/abs/2406.13073)   
+
+> **Authors**: [Md Hasan Shahriar](https://shahriar0651.github.io/), [Ning Wang](https://ning-wang1.github.io/), [Naren Ramakrishnan](https://sanghani.cs.vt.edu/person/naren-ramakrishnan.html), [Y. Thomas Hou](https://www.cnsr.ictas.vt.edu/THou.html), [Wenjing Lou](https://www.cnsr.ictas.vt.edu/WJLou.html)
+
+> **Accepted for publication in**: [**ESORICS 2025**](https://esorics2025.sciencesconf.org/) 
+
+[![Paper](https://img.shields.io/badge/Paper-ArXiv%20Preprint-brightgreen)](https://arxiv.org/abs/2406.13073) 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)  
 <!-- [![Build](https://img.shields.io/badge/Build-Passing-brightgreen.svg)]() -->
-
----
-
-> **Paper**: [Let the Noise Speak: Harnessing Noise for a Unified Defense Against Adversarial and Backdoor Attacks](https://arxiv.org/abs/2406.13073)  
-> **Authors**: Md Hasan Shahriar, Ning Wang, Naren Ramakrishnan, Y. Thomas Hou, Wenjing Lou
-> **Accepted for publication in**: [**ESORICS 2025**](https://esorics2025.sciencesconf.org/)
+  
 
 
 ---
