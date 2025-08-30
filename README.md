@@ -83,7 +83,7 @@ The following datasets are used to train and test NoiSec. Each of this datasets 
 | [*GTSRB*](https://benchmark.ini.rub.de/gtsrb_news.html) | 📷 Image | 32×32×3 | 43 | RGB images of traffic signs | Yes |
 | [*SPEECH*](https://www.tensorflow.org/datasets/catalog/speech_commands) | 🎵 Audio | 64×81×1 | 35 | Mel-spectrogram of spoken commands | Yes |
 | [*Med-MNIST*](https://medmnist.com/) | 🏥 X-rays | 64×64×1 | 2 | Chest X-rays for pediatric pneumonia | Yes |
-| [*Activity*](https://github.com/ludlows/CSI-Activity-Recognition/) | 📡 Wireless | 500×90×1 | 7 | CSI of wireless sensing of human activities | No |
+| [*Activity*](https://github.com/ludlows/CSI-Activity-Recognition/) | 📡 Wireless | 500×90×1 | 7 | CSI of wireless sensing of human activities | Yes |
 
 
 
